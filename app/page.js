@@ -9,7 +9,7 @@ export default function Home() {
     <main className="flex gap-5 relative">
       <div className="bg-[#DEF9C4] -z-20 absolute w-full h-full"></div>
       <div className="min-h-screen  flex w-full justify-center mt-52">
-        <Box2 salary={25000} />
+        <Box2 salary={250000} />
       </div>
     </main>
   );
