@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Box from '@mui/material/Box';
 import Box1 from "./box1";
-export default function Box2({ salary }) {
+import { useEffect, useState } from "react";
+export default function Box2() {
 
 
   return (
@@ -20,7 +21,7 @@ export default function Box2({ salary }) {
             className="object-top -z-10"/>
         </div>
         <div className="flex gap-16 ">
-          <Box1 salary={salary} />
+          <Box1 />
         </div>
       </Box>
     </div>

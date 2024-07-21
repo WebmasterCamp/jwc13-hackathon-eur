@@ -1,7 +1,8 @@
+
 'use client'
 import { useEffect, useState } from "react";
 
-export default function Box1({ salary }) {
+export default function Box1() {
   const [funds, setFunds] = useState(false)
   const [insurance, setInsurance] = useState(false)
   const [government, setGovernment] = useState(false)
@@ -12,6 +13,7 @@ export default function Box1({ salary }) {
   const [long, setLong] = useState(false)
   const [reduction, setReduction] = useState(0)
   const [tax,setTax] = useState(0)
+  const [salary,setSalary] = useState(250000)
 
   useEffect(() => {
     let newreduction = 0
@@ -68,29 +70,29 @@ export default function Box1({ salary }) {
     {
       setTax(115000 + ((salary-1000000) * 25/100))
     }
-    else if(salary <= 4000000)
+    else if(salary <= 5000000)
     {
       setTax(365000 + ((salary-2000000) * 30/100))
     }else {
-      setTax(965000 + ((salary-2000000) * 30/100))
+      setTax(965000 + ((salary-5000000) * 35/100))
     }
-  },[])
+  },[salary])
 
   return (
     <div className="flex flex-col justify-center items-center gap-20">
-      <p className="font-bold">รายได้สิทธิ : {salary}</p>
+      <p className="font-bold">รายได้สิทธิ : <input type="number" onChange={(e) => {setSalary(e.target.value)}} defaultValue={salary} className="bg-transparent outline-none"/></p>
       <div className="flex gap-9">
       <div>
-        <div><input type="checkbox" Checked={funds} onChange={() => { setFunds(!funds) }} /> การลงทุน RMF</div>
-        <div><input type="checkbox" Checked={insurance} onChange={() => { setHealth(!health) }} /> ประกันสุขภาพ</div>
-        <div><input type="checkbox" Checked={government} onChange={() => { setInsurance(!insurance) }} /> ประกันชีวิต</div>
-        <div><input type="checkbox" Checked={charity} onChange={() => { setCharity(!charity) }} /> บริจาค</div>
+        <div><input type="checkbox" checked={funds} onChange={() => { setFunds(!funds) }} /> การลงทุน RMF</div>
+        <div><input type="checkbox" checked={health} onChange={() => { setHealth(!health) }} /> ประกันสุขภาพ</div>
+        <div><input type="checkbox" checked={insurance} onChange={() => { setInsurance(!insurance) }} /> ประกันชีวิต</div>
+        <div><input type="checkbox" checked={charity} onChange={() => { setCharity(!charity) }} /> บริจาค</div>
       </div>
       <div>
-        <div><input type="checkbox" Checked={home} onChange={() => { setHome(!home) }} /> ดอกเบี้ยบ้าน</div>
-        <div><input type="checkbox" Checked={taxbase} onChange={() => { setTaxbase(!taxbase) }} /> ฐานภาษี</div>
-        <div><input type="checkbox" Checked={long} onChange={() => { setLong(!long) }} /> กองทุนรวมหุ้นระยะยาว</div>
-        <div><input type="checkbox" Checked={government} onChange={() => { setGovernment(!government) }} /> ใช้สิทธิตามมาตรการกระตุ้นเศรษฐกิจของรัฐ</div>
+        <div><input type="checkbox" checked={home} onChange={() => { setHome(!home) }} /> ดอกเบี้ยบ้าน</div>
+        <div><input type="checkbox" checked={taxbase} onChange={() => { setTaxbase(!taxbase) }} /> ฐานภาษี</div>
+        <div><input type="checkbox" checked={long} onChange={() => { setLong(!long) }} /> กองทุนรวมหุ้นระยะยาว</div>
+        <div><input type="checkbox" checked={government} onChange={() => { setGovernment(!government) }} /> ใช้สิทธิตามมาตรการกระตุ้นเศรษฐกิจของรัฐ</div>
       </div>
       </div>
       <p className="font-bold">ภาษี : {tax - reduction <= 0 ? 0: tax - reduction }</p>
