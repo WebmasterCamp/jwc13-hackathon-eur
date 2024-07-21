@@ -21,7 +21,6 @@ export default function Box2({ salary }) {
         </div>
         <div className="flex gap-16 ">
           <Box1 salary={salary} />
-          <Box1 salary={salary} />
         </div>
       </Box>
     </div>
