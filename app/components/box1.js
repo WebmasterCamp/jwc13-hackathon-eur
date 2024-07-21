@@ -83,8 +83,8 @@ export default function Box1() {
       <div className="flex gap-9">
       <div>
         <div><input type="checkbox" checked={funds} onChange={() => { setFunds(!funds) }} /> การลงทุน RMF</div>
-        <div><input type="checkbox" checked={insurance} onChange={() => { setHealth(!health) }} /> ประกันสุขภาพ</div>
-        <div><input type="checkbox" checked={government} onChange={() => { setInsurance(!insurance) }} /> ประกันชีวิต</div>
+        <div><input type="checkbox" checked={health} onChange={() => { setHealth(!health) }} /> ประกันสุขภาพ</div>
+        <div><input type="checkbox" checked={insurance} onChange={() => { setInsurance(!insurance) }} /> ประกันชีวิต</div>
         <div><input type="checkbox" checked={charity} onChange={() => { setCharity(!charity) }} /> บริจาค</div>
       </div>
       <div>
