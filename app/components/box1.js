@@ -69,11 +69,11 @@ export default function Box1() {
     {
       setTax(115000 + ((salary-1000000) * 25/100))
     }
-    else if(salary <= 4000000)
+    else if(salary <= 5000000)
     {
       setTax(365000 + ((salary-2000000) * 30/100))
     }else {
-      setTax(965000 + ((salary-2000000) * 35/100))
+      setTax(965000 + ((salary-5000000) * 35/100))
     }
   },[salary])
 
