@@ -1,24 +1,15 @@
 "use client";
 import Image from "next/image";
 import AppBar from "./components/navbar";
+// import Carousel from "./components/carousel";
+import Footer from "./components/footer";
 
-const data = [
-  {
-    salary: 25000,
-    reduction: 5000,
-    how: [
-      {
-        Funds: { type: "Funds", name: "name" },
-        Funds: { type: "Funds", name: "name" },
-        Funds: { type: "Funds", name: "name" },
-      },
-    ],
-  },
-];
 export default function Home() {
   return (
     <main className="">
       <AppBar />
+      {/* <Carousel /> */}
+      <Footer />
     </main>
   );
 }
