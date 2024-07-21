@@ -78,7 +78,7 @@ export default function Box1({ salary }) {
 
   return (
     <div className="flex flex-col justify-center items-center gap-20">
-      <p className="font-bold">เงินเดือน : {salary}</p>
+      <p className="font-bold">รายได้สิทธิ : {salary}</p>
       <div className="flex gap-9">
       <div>
         <div><input type="checkbox" Checked={funds} onChange={() => { setFunds(!funds) }} /> การลงทุน RMF</div>
