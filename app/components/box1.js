@@ -78,7 +78,7 @@ export default function Box1({ salary }) {
 
   return (
     <div className="flex flex-col justify-center items-center gap-20">
-      <p className="font-bold">Salary : {salary}</p>
+      <p className="font-bold">เงินเดือน : {salary}</p>
       <div className="flex gap-9">
       <div>
         <div><input type="checkbox" Checked={funds} onChange={() => { setFunds(!funds) }} /> การลงทุน RMF</div>
@@ -93,7 +93,7 @@ export default function Box1({ salary }) {
         <div><input type="checkbox" Checked={government} onChange={() => { setGovernment(!government) }} /> ใช้สิทธิตามมาตรการกระตุ้นเศรษฐกิจของรัฐ</div>
       </div>
       </div>
-      <p className="font-bold">reduction : {tax - reduction <= 0 ? 0: tax - reduction }</p>
+      <p className="font-bold">ภาษี : {tax - reduction <= 0 ? 0: tax - reduction }</p>
     </div>
   );
 }
